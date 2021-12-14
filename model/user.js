@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 const bcrypt = require("bcryptjs");
+const { string } = require("joi");
 
 const userSchema = Schema(
   {
@@ -22,7 +23,13 @@ const userSchema = Schema(
       type: String,
       default: null,
     },
+
+    avatarURL: {
+      type: String,
+      required: true,
+    },
   },
+
   { versionKey: false, timestamps: true }
 );
 
